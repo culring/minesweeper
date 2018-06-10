@@ -19,7 +19,7 @@ public class GameController {
     public GameController(Stage stage) {
         this.stage = stage;
         logger = new Logger("GameController");
-        startGame(Model.Difficulty.EASY);
+        startGame(Model.Difficulty.EASY, true);
     }
 
     private void createModelView(Model.Difficulty difficulty){
@@ -32,23 +32,23 @@ public class GameController {
         }
     }
 
-    private void startGame(Model.Difficulty difficulty){
+    private void startGame(Model.Difficulty difficulty, boolean center){
         stage.toBack();
         createModelView(difficulty);
         setup();
         stage.sizeToScene();
-        stage.centerOnScreen();
+        if(center) stage.centerOnScreen();
         stage.toFront();
     }
 
     private void startNewGame(Model.Difficulty difficulty){
-        stage.toBack();
         model.dispose();
-        createModelView(difficulty);
-        setup();
-        stage.sizeToScene();
-        stage.centerOnScreen();
-        stage.toFront();
+        startGame(difficulty, true);
+    }
+
+    private void resetGame(){
+        model.dispose();
+        startGame(model.getDifficulty(), false);
     }
 
     private void setup(){
@@ -58,7 +58,7 @@ public class GameController {
         view.setHardItemHandler(event -> startNewGame(Model.Difficulty.HARD));
         model.addTimerObserver(new TimerObserver());
         gameStarted = false;
-        view.addResetButtonHandler(event -> startNewGame(model.getDifficulty()));
+        view.addResetButtonHandler(event -> resetGame());
     }
 
     private Model model;
