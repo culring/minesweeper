@@ -48,7 +48,7 @@ public class Model {
     public ReverseChange reverse(int x, int y){
         Field field = getField(x, y);
         if(gameState == GameState.BOMB_DETONATED || gameState == GameState.SOLVED ||
-                field.getState() == Field.State.REVERSED){
+                field.getState() == Field.State.REVERSED || field.getState() == Field.State.MARKED){
             return new ReverseChange(new ArrayList<>(), new ArrayList<>());
         }
 
