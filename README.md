@@ -5,5 +5,9 @@
 </p>
 
 <p align="center">
+  <img src="screenshots/medium_lost.png">
+</p>
+
+<p align="center">
   <img src="screenshots/hard_1.png">
 </p>
