@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane>
+         <top>
+            <MenuBar fx:id="menuBar" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="New game">
+                     <items>
+                        <MenuItem fx:id="easyMenuItem" mnemonicParsing="false" text="Easy (9x9 10 bombs)" />
+                        <MenuItem mnemonicParsing="false" text="Medium (16x16 40 bombs)" />
+                        <MenuItem mnemonicParsing="false" text="Hard (16x30 99 bombs)" />
+                     </items></Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="borderPane" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </BorderPane>
+   </children>
+</VBox>
