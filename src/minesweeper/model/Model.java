@@ -202,11 +202,11 @@ public class Model {
 
         if(isLeft && isTop && linearPositions.contains(position-width-1)) ++numberOfAdjacent;
         if(isTop && linearPositions.contains(position-width)) ++numberOfAdjacent;
-        if(isBottom && isRight && linearPositions.contains(position-width+1)) ++numberOfAdjacent;
+        if(isTop && isRight && linearPositions.contains(position-width+1)) ++numberOfAdjacent;
         if(isRight && linearPositions.contains(position+1)) ++numberOfAdjacent;
         if(isBottom && isRight && linearPositions.contains(position+width+1)) ++numberOfAdjacent;
         if(isBottom && linearPositions.contains(position+width)) ++numberOfAdjacent;
-        if(isBottom && linearPositions.contains(position+width-1)) ++numberOfAdjacent;
+        if(isBottom && isLeft && linearPositions.contains(position+width-1)) ++numberOfAdjacent;
         if(isLeft && linearPositions.contains(position-1)) ++numberOfAdjacent;
 
         return numberOfAdjacent;

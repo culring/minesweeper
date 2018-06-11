@@ -52,7 +52,7 @@ class Counter {
         int pos = 0;
         if(length > digits.length){
             for(; pos < length - digits.length; ++pos){
-                trimmedDigits[pos] = 0;
+                trimmedDigits[pos] = 10;
             }
         }
         if(length < digits.length){
