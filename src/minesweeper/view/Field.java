@@ -4,7 +4,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import minesweeper.view.exceptions.UnknownFieldTypeException;
 
+/**
+ * Class representing a field.
+ */
 public class Field extends ImageView{
+    /**
+     * Initializes an object.
+     */
     Field(){
         set(Type.UNMARKED);
         setCache(true);
@@ -29,6 +35,10 @@ public class Field extends ImageView{
         reversedImage = new Image(Field.path + "reversed.png");
     }
 
+    /**
+     * Changes an image of this field.
+     * @param type Type of image to be displayed.
+     */
     void set(Type type){
         switch (type){
             case MARKED:
@@ -49,6 +59,10 @@ public class Field extends ImageView{
         }
     }
 
+    /**
+     * Changes an image of this field.
+     * @param value Value on field.
+     */
     void set(int value){
         if(value < 1 || value > 8){
             throw new UnknownFieldTypeException("Tried to create a field with value: " + value);
@@ -56,14 +70,38 @@ public class Field extends ImageView{
         setImage(valueFieldsImages[value-1]);
     }
 
+    /**
+     * Path to resources.
+     */
     private static String path;
+    /**
+     * All number images.
+     */
     private static Image[] valueFieldsImages;
+    /**
+     * Bomb image.
+     */
     private static Image bombImage;
+    /**
+     * Detonated bomb image.
+     */
     private static Image bombDetonatedImage;
+    /**
+     * Marked field image.
+     */
     private static Image markedImage;
+    /**
+     * "Unmarked" field image.
+     */
     private static Image unmarkedImage;
+    /**
+     * Reversed field image.
+     */
     private static Image reversedImage;
 
+    /**
+     * Types used to change current content of a field.
+     */
     enum Type{
         MARKED,
         UNMARKED,
